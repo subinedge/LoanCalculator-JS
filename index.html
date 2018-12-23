@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Loan Calculator</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lobster"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #fff;
+      }
+
+      .display-4 {
+        font-family: 'Lobster';
+        letter-spacing: 3px;
+      }
+
+      .input-box {
+        margin: 0 auto;
+        /* for centering */
+      }
+
+      .btn {
+        font-size: 1.2rem;
+      }
+
+      #results,
+      #loader {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display-4 text-center mb-5">Loan Calculator</div>
+      <form class="input-box w-75">
+        <!-- loan amount input box -->
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text">$</span>
+          </div>
+          <input
+            type="number"
+            class="form-control amount"
+            placeholder="Loan Amount"
+          />
+        </div>
+
+        <!-- Annual Interest input box -->
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <span class="input-group-text">%</span>
+          </div>
+          <input
+            type="number"
+            class="form-control interest"
+            placeholder="Annual Interest"
+          />
+        </div>
+
+        <!-- Years to repay input box -->
+        <div class="input-group">
+          <input
+            type="number"
+            class="form-control repayment"
+            placeholder="Year(s) to Repay"
+          />
+          <div class="input-group-append">
+            <span class="input-group-text">Year(s)</span>
+          </div>
+        </div>
+        <br />
+
+        <!-- submit form -->
+
+        <input
+          type="submit"
+          value="Calculate"
+          class="btn btn-dark btn-block mt-2"
+        />
+      </form>
+
+      <!-- loader display -->
+      <div id="loader" class="text-center">
+        <img src="loader.gif" alt="Loader" />
+      </div>
+
+      <!-- Results display -->
+      <div id="results">
+        <div class="h1 text-center mt-4">Results</div>
+
+        <!-- #Result-1 -->
+        <div class="input-group mt-4 input-box w-75">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Monthly Payment</span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="monthly-payment"
+            readonly
+          />
+        </div>
+
+        <!-- #Result-2 -->
+        <div class="input-group mt-4 input-box w-75">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Total Payment</span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="total-payment"
+            readonly
+          />
+        </div>
+
+        <!-- #Result-3 -->
+        <div class="input-group mt-4 input-box w-75">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Total Interest</span>
+          </div>
+          <input
+            type="number"
+            class="form-control"
+            id="total-interest"
+            readonly
+          />
+        </div>
+      </div>
+    </div>
+
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
